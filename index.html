@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartStay AI — Hotel Booking Assistant</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <i class="ti ti-building"></i>
+      <span>SmartStay <span class="accent">AI</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#rooms">Rooms</a>
+      <a href="#features">Features</a>
+      <a href="#chat-section" class="nav-cta">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="ti ti-sparkles"></i> AI-Powered Concierge</div>
+      <h1>Your Smart Hotel<br /><span class="hero-accent">Booking Assistant</span></h1>
+      <p class="hero-sub">Find and book the perfect room instantly with our AI concierge. Available 24/7, understands you naturally.</p>
+      <div class="hero-btns">
+        <a href="#chat-section" class="btn-primary">Chat with AI Concierge</a>
+        <a href="#rooms" class="btn-outline">Browse Rooms</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>4</span> Room Types</div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span>24/7</span> AI Support</div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span>Instant</span> Booking</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="chat-preview">
+        <div class="cp-header">
+          <div class="cp-avatar"><i class="ti ti-robot"></i></div>
+          <div>
+            <div class="cp-name">SmartStay Concierge</div>
+            <div class="cp-status"><span class="online-dot"></span> Online</div>
+          </div>
+        </div>
+        <div class="cp-messages">
+          <div class="cp-msg ai">Welcome! I can help you find the perfect room. What are you looking for?</div>
+          <div class="cp-msg user">I need a room for 2, under $120</div>
+          <div class="cp-msg ai">Great choice! Our <strong>Deluxe Room at $110/night</strong> is perfect — king bed, city view & minibar. Shall I book it?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms-section" id="rooms">
+    <div class="section-header">
+      <p class="section-tag">Accommodations</p>
+      <h2>Our Room Collection</h2>
+      <p class="section-sub">From cozy standards to luxurious suites — click any room to ask the AI about it.</p>
+    </div>
+    <div class="rooms-grid">
+      <div class="room-card" data-ask="Tell me more about the Standard Room and what makes it a good deal.">
+        <div class="room-icon"><i class="ti ti-bed"></i></div>
+        <div class="room-badge standard">Standard</div>
+        <h3>Standard Room</h3>
+        <div class="room-price">$65 <span>/ night</span></div>
+        <ul class="room-amenities">
+          <li><i class="ti ti-wifi"></i> High-speed WiFi</li>
+          <li><i class="ti ti-device-tv"></i> Flat-screen TV</li>
+          <li><i class="ti ti-bed"></i> Queen bed</li>
+          <li><i class="ti ti-snowflake"></i> Air conditioning</li>
+        </ul>
+        <button class="ask-ai-btn" onclick="askAboutRoom(this)">Ask AI about this room ↗</button>
+      </div>
+
+      <div class="room-card featured" data-ask="Tell me more about the Deluxe Room. Is it worth the price?">
+        <div class="room-icon"><i class="ti ti-crown"></i></div>
+        <div class="room-badge deluxe">Most Popular</div>
+        <h3>Deluxe Room</h3>
+        <div class="room-price">$110 <span>/ night</span></div>
+        <ul class="room-amenities">
+          <li><i class="ti ti-wifi"></i> High-speed WiFi</li>
+          <li><i class="ti ti-building-skyscraper"></i> City view</li>
+          <li><i class="ti ti-bed"></i> King bed</li>
+          <li><i class="ti ti-bottle"></i> Minibar</li>
+        </ul>
+        <button class="ask-ai-btn" onclick="askAboutRoom(this)">Ask AI about this room ↗</button>
+      </div>
+
+      <div class="room-card" data-ask="Tell me about the Family Suite. How many people can it fit?">
+        <div class="room-icon"><i class="ti ti-home-2"></i></div>
+        <div class="room-badge family">Family</div>
+        <h3>Family Suite</h3>
+        <div class="room-price">$175 <span>/ night</span></div>
+        <ul class="room-amenities">
+          <li><i class="ti ti-door"></i> 2 bedrooms</li>
+          <li><i class="ti ti-sofa"></i> Living area</li>
+          <li><i class="ti ti-chef-hat"></i> Kitchenette</li>
+          <li><i class="ti ti-wifi"></i> High-speed WiFi</li>
+        </ul>
+        <button class="ask-ai-btn" onclick="askAboutRoom(this)">Ask AI about this room ↗</button>
+      </div>
+
+      <div class="room-card" data-ask="Tell me about the Executive Suite. What luxury amenities does it include?">
+        <div class="room-icon"><i class="ti ti-diamond"></i></div>
+        <div class="room-badge exec">Executive</div>
+        <h3>Executive Suite</h3>
+        <div class="room-price">$280 <span>/ night</span></div>
+        <ul class="room-amenities">
+          <li><i class="ti ti-eye"></i> Panoramic view</li>
+          <li><i class="ti ti-user-star"></i> Butler service</li>
+          <li><i class="ti ti-droplet"></i> Jacuzzi</li>
+          <li><i class="ti ti-wifi"></i> Premium WiFi</li>
+        </ul>
+        <button class="ask-ai-btn" onclick="askAboutRoom(this)">Ask AI about this room ↗</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <p class="section-tag">Why SmartStay AI</p>
+      <h2>Powered by Intelligence</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-message-chatbot"></i></div>
+        <h4>Natural Conversation</h4>
+        <p>Just tell the AI what you need — it understands natural language and helps you find the right room instantly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-clock-24"></i></div>
+        <h4>24/7 Availability</h4>
+        <p>No waiting on hold. The AI concierge is always online, ready to assist you at any hour of the day.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-calculator"></i></div>
+        <h4>Smart Recommendations</h4>
+        <p>Tell the AI your budget and preferences — it will recommend the best options and calculate your total cost.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-shield-check"></i></div>
+        <h4>Easy Booking</h4>
+        <p>The AI guides you through the entire booking process — from room selection to confirmation in minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT SECTION -->
+  <section class="chat-section" id="chat-section">
+    <div class="section-header">
+      <p class="section-tag">AI Concierge</p>
+      <h2>Chat & Book Instantly</h2>
+      <p class="section-sub">Talk to our AI — ask anything about rooms, prices, or make a reservation.</p>
+    </div>
+
+    <div class="chat-container">
+      <!-- Sidebar -->
+      <div class="chat-sidebar">
+        <div class="sidebar-title"><i class="ti ti-layout-list"></i> Quick Rooms</div>
+        <div class="sidebar-rooms">
+          <div class="s-room" onclick="quickAsk('Tell me about the Standard Room at $65/night.')">
+            <div class="s-room-name">Standard Room</div>
+            <div class="s-room-price">$65/night</div>
+          </div>
+          <div class="s-room" onclick="quickAsk('Tell me about the Deluxe Room at $110/night.')">
+            <div class="s-room-name">Deluxe Room</div>
+            <div class="s-room-price">$110/night</div>
+          </div>
+          <div class="s-room" onclick="quickAsk('Tell me about the Family Suite at $175/night.')">
+            <div class="s-room-name">Family Suite</div>
+            <div class="s-room-price">$175/night</div>
+          </div>
+          <div class="s-room" onclick="quickAsk('Tell me about the Executive Suite at $280/night.')">
+            <div class="s-room-name">Executive Suite</div>
+            <div class="s-room-price">$280/night</div>
+          </div>
+        </div>
+        <div class="sidebar-title" style="margin-top:1.5rem;"><i class="ti ti-bolt"></i> Quick Questions</div>
+        <div class="quick-btns">
+          <button onclick="quickAsk('What rooms do you have under $100 per night?')">Rooms under $100</button>
+          <button onclick="quickAsk('I need a room for a family of 4 for 3 nights. What do you recommend?')">Family of 4, 3 nights</button>
+          <button onclick="quickAsk('What is your cancellation policy?')">Cancellation policy</button>
+          <button onclick="quickAsk('Does breakfast come included?')">Breakfast info</button>
+          <button onclick="quickAsk('What is the check-in and check-out time?')">Check-in times</button>
+          <button onclick="quickAsk('Compare all your rooms for me.')">Compare all rooms</button>
+        </div>
+        <div class="api-key-section">
+          <div id="ollama-status" class="ollama-status checking">Ollama: Checking...</div>
+          <div id="ollama-model" class="ollama-model">Model: llama3.2</div>
+          <p class="api-hint">Running 100% free & locally on your computer via Ollama.</p>
+        </div>
+      </div>
+
+      <!-- Chat Window -->
+      <div class="chat-window">
+        <div class="chat-header">
+          <div class="ch-avatar"><i class="ti ti-robot"></i></div>
+          <div class="ch-info">
+            <div class="ch-name">SmartStay Concierge</div>
+            <div class="ch-status"><span class="online-dot"></span> Online — ready to help</div>
+          </div>
+          <button class="clear-btn" onclick="clearChat()" title="Clear chat"><i class="ti ti-trash"></i></button>
+        </div>
+
+        <div id="messages"></div>
+
+        <div class="input-area">
+          <textarea id="user-input" placeholder="Ask about rooms, prices, availability, or make a booking..." rows="1"></textarea>
+          <button id="send-btn" onclick="sendMessage()" aria-label="Send">
+            <i class="ti ti-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="ti ti-building"></i>
+        <span>SmartStay <span class="accent">AI</span></span>
+      </div>
+      <p>AI Hotel Booking Assistant — Project by Trinh Van Quan (Student ID: 24012975)</p>
+      <p style="margin-top:4px; font-size:12px;">Built with Anthropic Claude API · Node.js · React concepts</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
